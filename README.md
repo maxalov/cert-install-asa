@@ -1,4 +1,4 @@
-# Script for installation ssl identity certificate on the Cisco ASA via REST API.
+# Script for automatic installation ssl identity certificate on the Cisco ASA via REST API
 Allows you to simply convert `private key, cert and .ca` to `.PKCS12` and upload to device
 # Filling config.ini
 ```
