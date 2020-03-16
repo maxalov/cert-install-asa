@@ -6,7 +6,7 @@ Allows you to simply convert `private key, cert and .ca` to `.PKCS12` and upload
 ipaddress = 192.168.1.1                # Management ip address of cisco asa.
 username = admin                       # Credentials. Be sure, that your account has admin rights.
 password = password                    # Credentials. Be sure, that your account has admin rights.
-interface = outside                    # Interface cisco asa, on which anycoonnect works.
+interface = outside                    # Interface cisco asa, on which anyconnect works.
 certpath = /Users/vasya.pupkin/folder/ # Path to private key, cert and chain
 certpass = secretpassword              # Password for pkcs12. Be sure, that it's not 'root' or 'qwerty'
 certname = supername                   # Files names
