@@ -1,6 +1,6 @@
-# cert-install-asa
-Script for installation certificate on the cisco asa via REST API
-# Concern of the config.ini
+# Script for installation ssl identity certificate on the Cisco ASA via REST API.
+Allows you to simply convert `private key, cert and .ca` to `.PKCS12` and upload to device
+# Filling config.ini
 ```
 [options]
 # Management ip address of cisco asa 
@@ -20,7 +20,7 @@ certname = supername
 pin = True
 ```
 # Run script
-./cert-install-asa.py
+python cert-install-asa.py
 ```
 OPEN SSL Certificate 20200316.p12 successfully created and move to /Users/vasya.pupkin/folder/
 REST API starts uploading ssl certificate 20200316.p12 to cisco ip 192.168.1.1
