@@ -1,26 +1,19 @@
-# cert-install-asa
-Script for installation certificate on the cisco asa via REST API
-# Concern of the config.ini
+# Script for automatic installation ssl identity certificate on the Cisco ASA via REST API
+Allows you to simply convert `private key, cert and .ca` to `.PKCS12` and upload to device
+# Filling config.ini
 ```
 [options]
-# Management ip address of cisco asa 
-ipaddress = 192.168.1.1 
-# Credentionals. Be sure, that your account has admin rights.
-username = admin
-password = superpassword
-# Interface cisco asa, on which anyconnect works. 
-interface = outside
-# Path to private key, cert and chain.
-certpath = /Users/vasya.pupkin/folder/
-# Password for pkcs12. Be sure, that it's not 'root' or 'qwerty'
-certpass = supersecret
-# Files names 
-certname = supername
-# Upload certificate to cisco asa with or without pinning to interface 
-pin = True
+ipaddress = 192.168.1.1                # Management ip address of cisco asa.
+username = admin                       # Credentials. Be sure, that your account has admin rights.
+password = password                    # Credentials. Be sure, that your account has admin rights.
+interface = outside                    # Interface cisco asa, on which anyconnect works.
+certpath = /Users/vasya.pupkin/folder/ # Path to private key, cert and chain
+certpass = secretpassword              # Password for pkcs12. Be sure, that it's not 'root' or 'qwerty'
+certname = supername                   # Files names
+pin = True                             # Upload certificate to cisco asa with or without pinning to interface
 ```
 # Run script
-./cert-install-asa.py
+python cert-install-asa.py
 ```
 OPEN SSL Certificate 20200316.p12 successfully created and move to /Users/vasya.pupkin/folder/
 REST API starts uploading ssl certificate 20200316.p12 to cisco ip 192.168.1.1
