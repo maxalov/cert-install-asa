@@ -16,9 +16,10 @@ pin = True                             # Upload certificate to cisco asa with or
 python cert-install-asa.py
 ```
 OPEN SSL Certificate 20200316.p12 successfully created and move to /Users/vasya.pupkin/folder/
-REST API starts uploading ssl certificate 20200316.p12 to cisco ip 192.168.1.1
+REST API Trying to get token 192.168.1.1
+REST API Trying upload ssl certificate 20200316.p12 to cisco ip 192.168.1.1
 REST API response {'messages': [{'level': 'Warning', 'code': '', 'details': 'Import PKCS12 operation completed successfully.'}]}
-REST API starts attaching ssl certificate 20200316.p12 to cisco ip 192.168.1.1 interface nameif outside
+REST API Trying attach ssl certificate 20200316.p12 to cisco ip 192.168.1.1 interface nameif outside
 REST API response {'response': ['', 'Building configuration...\nCryptochecksum: fe1ed704 b7cf5ea3 91d452de 6b8cd26e \n\n24376 bytes copied in 0.290 secs\n[OK]\n']}
 
 Elapsed time: 0:00:19.558316
