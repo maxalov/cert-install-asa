@@ -11,7 +11,7 @@ def get_auth_token(ip, username, password):
     url = f'https://{username}:{password}@{ip}/api/tokenservices'
     headers = {'Content-Type': "application/json"}
     payload = ""
-    response = requests.request("POST", url, data=json.dumps(payload), headers=headers, verify=False)
+    response = requests.post(url, data=json.dumps(payload), headers=headers, verify=False)
     if not response:
         print("No Data returned")
     else:
