@@ -69,15 +69,17 @@ def convert_postpincert(datename, nameif):
 
 def post_rest_api(ip, data, datename, nameif, attach=False):
     url = f'https://{ip}/api/certificate/identity'
-    print(f'REST API starts uploading ssl certificate {datename}.p12 to cisco ip {ip}')
-    ssl_upload = requests.post(url, headers=header(ip, username, password), data=data, verify=False)
-    print(f'REST API response {ssl_upload.json()}')
-    if attach:
-        pin_data = convert_postpincert(datename, nameif)
-        url = f'https://{ip}/api/cli'
-        print(f'REST API starts attaching ssl certificate {datename}.p12 to cisco ip {ip} nameif {nameif}')
-        ssl_pin = requests.post(url, headers=header(ip, username, password), data=pin_data, verify=False)
-        print(f'REST API response {ssl_pin.json()}')
+    token = header(ip, username, password)
+    if token:
+        print(f'REST API Trying upload ssl certificate {datename}.p12 to cisco ip {ip}')
+        ssl_upload = requests.post(url, headers=token, data=data, verify=False)
+        print(f'REST API Response {ssl_upload.json()}')
+        if attach:
+            pin_data = convert_postpincert(datename, nameif)
+            url = f'https://{ip}/api/cli'
+            print(f'REST API Trying attach ssl certificate {datename}.p12 to cisco ip {ip} nameif {nameif}')
+            ssl_pin = requests.post(url, headers=token, data=pin_data, verify=False)
+            print(f'REST API Response {ssl_pin.json()}')
 
 
 def main():
